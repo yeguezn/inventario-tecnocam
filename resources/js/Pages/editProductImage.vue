@@ -31,9 +31,11 @@ function subirArchivo(event) {
                 <h1 class="text-center mb-4 head-title">Cambiar imagen de {{props.nombreProducto}}</h1>
                 <v-form @submit.prevent="enviarFormulario"  class="d-flex justify-center flex-column">
                 
-                    <v-file-input @input="(e) => subirArchivo(e)" variant="outlined" prepend-icon="" label="Subir nueva imagen">
+                    <v-file-input @input="(e) => subirArchivo(e)" 
+                    variant="outlined" 
+                    prepend-icon="" 
+                    label="Subir nueva imagen" :errorMessages="errors.imagen">
                     </v-file-input>
-                    <div v-if="errors.imagen">{{ errors.imagen }}</div>
                     <progress v-if="form.progress" :value="form.progress.percentage" max="100">
                         {{ form.progress.percentage }}%
                     </progress>

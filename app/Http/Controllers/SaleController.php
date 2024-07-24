@@ -10,6 +10,7 @@ use App\Models\Sale;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Cache;
+use App\Http\Requests\SaleRequest;
 
 class SaleController extends Controller
 {
@@ -27,7 +28,7 @@ class SaleController extends Controller
         ]);
     }
 
-    public function store(Int $productoId, Request $request){
+    public function store(Int $productoId, SaleRequest $request){
 
         $producto = Product::find($productoId);
 
