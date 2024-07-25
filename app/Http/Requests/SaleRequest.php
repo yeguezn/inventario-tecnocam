@@ -25,7 +25,6 @@ class SaleRequest extends FormRequest
             "nombre" => "required|max:50",
             "cedula" => ["required", "regex:/^[0-9]{7,8}$/", "size:8"],
             "banco" => "required",
-            "clave" => "required|size:4",
             "cantidad" => "required|integer|min:1"
         ];
     }
@@ -36,7 +35,7 @@ class SaleRequest extends FormRequest
             "nombre.required" => "Este campo es obligatorio.",
 
             "cedula.required" => "Este campo es obligatorio.",
-            "cedula.size" => "La cédula debe tener 7 digitos",
+            "cedula.size" => "La cédula debe tener 8 digitos",
             "cedula.regex" => "Número de cédula no válido.",
 
             "cantidad.required" => "Este campo es obligatorio.",
@@ -47,7 +46,6 @@ class SaleRequest extends FormRequest
             "clave.size" => "Este campo debe tener cuatro caracteres.",
 
             "banco.required" => "Este campo es obligatorio.",
-
 
         ];
     }

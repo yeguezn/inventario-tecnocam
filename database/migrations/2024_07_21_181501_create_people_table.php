@@ -16,7 +16,6 @@ return new class extends Migration
             $table->string("nombre", length:20);
             $table->string("cedula", length:8)->unique();
             $table->string("banco", length:20);
-            $table->string("clave", length:4);
         });
     }
 

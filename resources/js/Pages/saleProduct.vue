@@ -46,9 +46,6 @@ function enviarFormulario() {
 
                     <v-text-field label="Cantidad" variant="outlined" 
                     type="text" v-model="form.cantidad" :errorMessages="errors.cantidad"/>
-                   
-                    <v-text-field label="Clave" variant="outlined" 
-                    type="password" v-model="form.clave"/>
 
                     <v-btn color="primary" type="submit" class="mt-4">
                         guardar

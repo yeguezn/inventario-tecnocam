@@ -10,7 +10,9 @@ const props = defineProps({
 </script>
 
 <template>
-    <Head title="Inventario"></Head>
+    <Head title="Inventario">
+        <link rel="icon" type="image/svg+xml" href="/xcoreico.svg" />
+    </Head>
     <v-app>
         <navBar></navBar>
         <v-main>
