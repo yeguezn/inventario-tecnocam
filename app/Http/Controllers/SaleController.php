@@ -60,8 +60,7 @@ class SaleController extends Controller
                 $persona = Person::create([
                     "nombre" => $requestData["data"]->nombre,
                     "cedula" => $requestData["data"]->cedula,
-                    "banco" => $requestData["data"]->banco,
-                    "clave" => $requestData["data"]->clave
+                    "banco" => $requestData["data"]->banco
                 ]);
             }
 
@@ -94,4 +93,5 @@ class SaleController extends Controller
         return redirect("/");
 
     }
+
 }

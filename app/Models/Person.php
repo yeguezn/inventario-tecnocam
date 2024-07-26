@@ -14,7 +14,6 @@ class Person extends Model
     protected $fillable = [
         "nombre",
         "cedula",
-        "banco",
-        "clave"
+        "banco"
     ];
 }

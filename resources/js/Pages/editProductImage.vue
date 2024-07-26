@@ -1,6 +1,7 @@
 <script setup>
 import { useForm } from '@inertiajs/vue3'
 import { Head } from "@inertiajs/vue3"
+import baseForm from "@/components/baseForm.vue"
 
 const props = defineProps({
     nombreProducto:String,
@@ -26,26 +27,17 @@ function subirArchivo(event) {
     <Head :title="`Cambiar Imagen de ${props.nombreProducto}`"></Head>
    <v-app>
         <v-main>
-            <v-sheet class="mx-auto d-flex justify-center flex-column mt-15 px-15" 
-            width="500" height="500">
-                <h1 class="text-center mb-4 head-title">Cambiar imagen de {{props.nombreProducto}}</h1>
-                <v-form @submit.prevent="enviarFormulario"  class="d-flex justify-center flex-column">
-                
-                    <v-file-input @input="(e) => subirArchivo(e)" 
-                    variant="outlined" 
-                    prepend-icon="" 
-                    label="Subir nueva imagen" :errorMessages="errors.imagen">
-                    </v-file-input>
-                    <progress v-if="form.progress" :value="form.progress.percentage" max="100">
-                        {{ form.progress.percentage }}%
-                    </progress>
-
-                    <v-btn color="primary" type="submit" class="mt-4">
-                        guardar
-                    </v-btn>
-                </v-form>
-                
-            </v-sheet>
+            <baseForm :options="{'titulo':'Cambiar imagen del producto', 
+            'enviarFormulario':enviarFormulario, 'boton':'guardar'}">
+                <v-file-input @input="(e) => subirArchivo(e)" 
+                variant="outlined" 
+                prepend-icon="" 
+                label="Subir nueva imagen" :errorMessages="errors.imagen">
+                </v-file-input>
+                <progress v-if="form.progress" :value="form.progress.percentage" max="100">
+                    {{ form.progress.percentage }}%
+                </progress>
+            </baseForm>
         </v-main>
     </v-app>
 </template>

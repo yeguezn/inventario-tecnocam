@@ -8,6 +8,12 @@ const props = defineProps({
 </script>
 
 <template>
-    <h1>{{props.message}}</h1>
-    <Link href="/">Volver al inicio</Link>
+    <div class="d-flex flex-column align-center mt-15">
+
+        <h1>{{props.message}}</h1>
+        <v-btn class="mt-5">
+            <Link href="/" as="button">Volver al inicio</Link>
+        </v-btn>
+
+    </div>
 </template>

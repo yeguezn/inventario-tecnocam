@@ -41,9 +41,6 @@ class SaleRequest extends FormRequest
             "cantidad.required" => "Este campo es obligatorio.",
             "cantidad.integer" => "Este campo solo acepta números enteros.",
             "cantidad.min" => "El valor mínimo para este campo es 1.",
-            
-            "clave.required" => "Este campo es obligatorio.",
-            "clave.size" => "Este campo debe tener cuatro caracteres.",
 
             "banco.required" => "Este campo es obligatorio.",
 
